@@ -1,14 +1,14 @@
-import { createBuilder } from "https://deno.land/x/denogent@v0.1.2/lib/core/builder.ts";
-import { task } from "https://deno.land/x/denogent@v0.1.2/lib/core/task.ts";
-import deno from "https://deno.land/x/denogent@v0.1.2/lib/deno/deno.ts";
-import { DenoPermissions } from "https://deno.land/x/denogent@v0.1.2/lib/deno/args.ts";
-import { createGitHubActions } from "https://deno.land/x/denogent@v0.1.2/lib/ci/github_actions/github_actions.ts";
+import { createBuilder } from "https://deno.land/x/denogent/lib/core/builder.ts";
+import { task } from "https://deno.land/x/denogent/lib/core/task.ts";
+import deno from "https://deno.land/x/denogent/lib/deno/deno.ts";
+import { createGitHubActions } from "https://deno.land/x/denogent/lib/ci/gh-actions/gh-actions.ts";
+import { DenoPermissions } from "https://deno.land/x/denogent/lib/deno/args.ts";
 
 const test = task('test')
     .does(async ctx => {
         await deno.test({
             logger: ctx?.logger,
-            permissions: DenoPermissions.None
+            permissions: DenoPermissions.All
         });
     });
 

@@ -1,8 +1,5 @@
-import { createBuilder } from "https://deno.land/x/denogent/lib/core/builder.ts";
-import { task } from "https://deno.land/x/denogent/lib/core/task.ts";
-import deno from "https://deno.land/x/denogent/lib/deno/deno.ts";
-import { createGitHubActions } from "https://deno.land/x/denogent/lib/ci/gh-actions/gh-actions.ts";
-import { DenoPermissions } from "https://deno.land/x/denogent/lib/deno/args.ts";
+import { createBuilder, deno, DenoPermissions, task } from "https://deno.land/x/denogent@v0.1.7/lib/mod.ts";
+import { createGitHubActions } from "https://deno.land/x/denogent@v0.1.7/lib/ci/gh-actions/mod.ts";
 
 const test = task('test')
     .does(async ctx => {
